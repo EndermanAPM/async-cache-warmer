@@ -1,0 +1,18 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag cache-warmer:$(date +%s)
+    - name: Docker run
+      run: docker run cache-warmer -s "https://acmotos.com/es/module/lgsitemaps/sitemap?name=product_1_1" -s "https://acmotos.com/es/module/lgsitemaps/sitemap?name=category_1_1" -l 10
