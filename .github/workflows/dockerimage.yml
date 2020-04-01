@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Docker run
-      run: docker run jradik/async-cache-warmer -s "https://acmotos.com/es/module/lgsitemaps/sitemap?name=product_1_1" -s "https://acmotos.com/es/module/lgsitemaps/sitemap?name=category_1_1" -l 1
+      run: docker run jradik/async-cache-warmer -s "https://acmotos.com/es/module/lgsitemaps/sitemap?name=category_1_1" -s "https://acmotos.com/es/module/lgsitemaps/sitemap?name=product_1_1" -l 2
